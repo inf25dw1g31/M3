@@ -1,0 +1,850 @@
+{
+	"info": {
+		"_postman_id": "7373087b-ac4f-4aa8-8ae7-5582f0d4a818",
+		"name": "Car4Me API",
+		"description": "Coleção completa de testes para API Car4Me - Sistema de Gestão de Rent-a-Car",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "48760199"
+	},
+	"item": [
+		{
+			"name": "Categorias",
+			"item": [
+				{
+					"name": "Listar todas as categorias",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/categorias",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"categorias"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obter categoria por ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/categorias/1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"categorias",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Criar categoria",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"nome\": \"Híbrido\",\n  \"preco_dia\": 45.00\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/categorias",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"categorias"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Atualizar categoria",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"preco_dia\": 50.00\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/categorias/1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"categorias",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar categoria",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/categorias/1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"categorias",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Veículos",
+			"item": [
+				{
+					"name": "Listar todos os veículos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/veiculos",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"veiculos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obter veículo por ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/veiculos/1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"veiculos",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Criar veículo",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"marca\": \"BMW\",\n  \"modelo\": \"Série 3\",\n  \"matricula\": \"AA-00-BB\",\n  \"ano\": 2024,\n  \"cor\": \"Azul\",\n  \"quilometragem\": 0,\n  \"estado\": \"Disponivel\",\n  \"id_categoria\": 2\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/veiculos",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"veiculos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Atualizar veículo",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"quilometragem\": 15000,\n  \"estado\": \"Disponivel\"\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/veiculos/1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"veiculos",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar veículo",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/veiculos/1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"veiculos",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Clientes",
+			"item": [
+				{
+					"name": "Listar todos os clientes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/clientes",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"clientes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obter cliente por ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/clientes/1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"clientes",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Criar cliente",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"nome\": \"João Silva\",\n  \"email\": \"joao.silva@example.com\",\n  \"telefone\": \"912345678\",\n  \"nif\": \"123456789\",\n  \"morada\": \"Rua das Flores, 123, Porto\"\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/clientes",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"clientes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Atualizar cliente",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"telefone\": \"918765432\"\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/clientes/1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"clientes",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar cliente",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/clientes/1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"clientes",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Funcionários",
+			"item": [
+				{
+					"name": "Listar todos os funcionários",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/funcionarios",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"funcionarios"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obter funcionário por ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/funcionarios/1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"funcionarios",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Criar funcionário",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"nome\": \"Maria Santos\",\n  \"email\": \"maria.santos@car4me.pt\",\n  \"telefone\": \"223456789\",\n  \"cargo\": \"Gestor de Frota\"\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/funcionarios",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"funcionarios"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Atualizar funcionário",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"cargo\": \"Supervisor\"\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/funcionarios/1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"funcionarios",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar funcionário",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/funcionarios/1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"funcionarios",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Reservas",
+			"item": [
+				{
+					"name": "Listar todas as reservas",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/reservas",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"reservas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Filtrar reservas ativas",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/reservas?filter={\"where\":{\"estado\":\"ativa\"}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"reservas"
+							],
+							"query": [
+								{
+									"key": "filter",
+									"value": "{\"where\":{\"estado\":\"ativa\"}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obter reserva por ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/reservas/1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"reservas",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Criar reserva",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"id_cliente\": 1,\n  \"id_veiculo\": 2,\n  \"id_funcionario\": 1,\n  \"data_inicio\": \"2026-01-10T10:00:00Z\",\n  \"data_fim\": \"2026-01-15T18:00:00Z\",\n  \"preco_total\": 250.00,\n  \"estado\": \"ativa\"\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/reservas",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"reservas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Atualizar reserva",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"estado\": \"concluida\"\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/reservas/1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"reservas",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar reserva",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/reservas/1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"reservas",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Manutenções",
+			"item": [
+				{
+					"name": "Listar todas as manutenções",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/manutencaos",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"manutencaos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obter manutenção por ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/manutencaos/1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"manutencaos",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Criar manutenção",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"id_veiculo\": 1,\n  \"descricao\": \"Revisão dos 10.000 km\",\n  \"data_manutencao\": \"2026-01-05T14:00:00Z\",\n  \"custo\": 150.00\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/manutencaos",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"manutencaos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Atualizar manutenção",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"custo\": 175.00\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/manutencaos/1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"manutencaos",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar manutenção",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/manutencaos/1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"manutencaos",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Cliente-Favoritos (M:N)",
+			"item": [
+				{
+					"name": "Listar todos os favoritos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/cliente-favoritos",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"cliente-favoritos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obter favorito específico",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/cliente-favoritos/1/2",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"cliente-favoritos",
+								"1",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Criar favorito",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"id_cliente\": 1,\n  \"id_veiculo\": 2\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/cliente-favoritos",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"cliente-favoritos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar favorito",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/cliente-favoritos/1/2",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"cliente-favoritos",
+								"1",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Testes Especiais",
+			"item": [
+				{
+					"name": "Contar veículos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/veiculos/count",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"veiculos",
+								"count"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Ping (health check)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/ping",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"ping"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "OpenAPI JSON",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/openapi.json",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"openapi.json"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "http://localhost:3000",
+			"type": "string"
+		}
+	]
+}
