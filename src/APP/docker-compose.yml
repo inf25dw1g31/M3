@@ -1,0 +1,58 @@
+services:
+  db:
+    build:
+      context: ./mysql-init
+      dockerfile: Dockerfile
+    container_name: car4me-mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: car4me
+      MYSQL_USER: car4me
+      MYSQL_PASSWORD: car4me
+    ports:
+      - "3007:3306"
+    volumes:
+      - db_data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "127.0.0.1", "-uroot", "-proot"]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+
+  api:
+    build:
+      context: ./Car4Me_loop/car4me
+      dockerfile: Dockerfile
+    container_name: car4me-api
+    environment:
+      HOST: 0.0.0.0
+      PORT: 3000
+      NODE_ENV: production
+
+      # Dentro do Docker: host=db e porta=3306 (NÃO é 3007)
+      DB_HOST: db
+      DB_PORT: 3306
+      DB_USER: car4me
+      DB_PASSWORD: car4me
+      DB_DATABASE: car4me
+    ports:
+      - "3000:3000"
+    depends_on:
+      db:
+        condition: service_healthy
+
+  backoffice:
+    build:
+      context: ./Car4Me_loop/car4me/car4me-react_admin
+      dockerfile: Dockerfile
+      args:
+        # O browser chama a API pelo host (porta publicada)
+        REACT_APP_API_URL: http://localhost:3000
+    container_name: car4me-backoffice
+    ports:
+      - "8080:80"
+    depends_on:
+      - api
+
+volumes:
+  db_data:
