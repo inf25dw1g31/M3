@@ -1,0 +1,24 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const tslib_1 = require("tslib");
+tslib_1.__exportStar(require("./ping.controller"), exports);
+tslib_1.__exportStar(require("./veiculo-categoria.controller"), exports);
+tslib_1.__exportStar(require("./categoria-veiculo.controller"), exports);
+tslib_1.__exportStar(require("./cliente-favorito.controller"), exports);
+tslib_1.__exportStar(require("./reserva-cliente.controller"), exports);
+tslib_1.__exportStar(require("./cliente-reserva.controller"), exports);
+tslib_1.__exportStar(require("./reserva-funcionario.controller"), exports);
+tslib_1.__exportStar(require("./funcionario-reserva.controller"), exports);
+tslib_1.__exportStar(require("./reserva-veiculo.controller"), exports);
+tslib_1.__exportStar(require("./veiculo-reserva.controller"), exports);
+tslib_1.__exportStar(require("./manutencao-veiculo.controller"), exports);
+tslib_1.__exportStar(require("./veiculo-manutencao.controller"), exports);
+tslib_1.__exportStar(require("./cliente-veiculo.controller"), exports);
+tslib_1.__exportStar(require("./veiculo-cliente.controller"), exports);
+tslib_1.__exportStar(require("./funcionario.controller"), exports);
+tslib_1.__exportStar(require("./categoria.controller"), exports);
+tslib_1.__exportStar(require("./veiculo.controller"), exports);
+tslib_1.__exportStar(require("./cliente.controller"), exports);
+tslib_1.__exportStar(require("./reserva.controller"), exports);
+tslib_1.__exportStar(require("./manutencao.controller"), exports);
+//# sourceMappingURL=index.js.map
