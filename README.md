@@ -1,56 +1,101 @@
-# My work assignment Title
+# Car4Me – API chapter (Momento 3)
 
-Repository to host the project developed for 'some class', a n^th^ year subject at SOMESCHOOL. Developed by Group ALPHA : [@MarcoOliveira](https://github.com/marcoamarooliveira), [add others].
+## Descrição do Projeto
 
-## Short theme description
+O **Car4Me** é uma solução **API-first** para apoiar as operações diárias de uma empresa de aluguer de veículos.
 
-An example report using markdown on Github. This documentation is writen using [Markdown](https://www.markdownguide.org/). Here is a [link to the basic syntax](https://www.markdownguide.org/basic-syntax), but an [extended syntax](https://www.markdownguide.org/extended-syntax/) is also available. If you're starting with Markdown, you may want to try a [Markdown Tutorial](https://www.markdowntutorial.com/) and read the [getting started](https://www.markdownguide.org/getting-started/) section.
+No **Momento 3**, a solução é composta por:
 
-## Repository organization
+- **API REST** desenvolvida em **LoopBack 4** (abordagem **code-first**, em **TypeScript**)
+- **Backoffice Web** desenvolvido com **React-Admin** (consome a API)
+- **MySQL 8** como base de dados relacional
+- Execução em **Docker / Docker Compose** (ambiente multi-container)
+- **OpenAPI 3.0** gerado automaticamente pela API (Swagger/Explorer)
 
-_Please help reader navigate around describing how the repository is organized by providing links_
-* **Source code** is in the [src folder](src/).
-* Report chapters are in [doc folder](doc/).
-* Initial [OpenApi document](api/openapi.yaml)
+O sistema permite gerir:
 
-## Gallery
+- clientes  
+- veículos  
+- categorias  
+- funcionários  
+- reservas  
+- manutenções  
+- relação N:N de favoritos (clientes ⇄ veículos) 
 
-_Please provide a galery of the final result, with small images_
-A [table](https://www.markdownguide.org/extended-syntax/#tables) may be usefull to organize the images.
+---
 
-## Technologies
+## Organização do Repositório
 
-_Indicate the technologies you have used in this assignment. Please provide links for the user to read more about those technologies._
-* [XML](https://www.w3.org/XML/)
-* [HTML5](https://html.spec.whatwg.org/multipage/) + [CSS3](https://www.w3.org/Style/CSS/)
-* [Javascript](https://developer.mozilla.org/en-US/docs/Learn/JavaScript)
-* [PHP](https://www.php.net/)
-* [nodeJS](https://nodejs.org/en/)
-* _Any other?_
+A estrutura do repositório mantém-se alinhada com o relatório por capítulos e com a separação API/backoffice:
 
-### Frameworks and Libraries
+```
+/
+└── doc/                                     # Capítulos do relatório (C1, C2, C3, C4)
+      └── image/                             # Imagens (diagramas, capturas do Swagger, etc.)
+└── src/
+    └── Car4Me/
+        ├── api/                             # Projeto LoopBack 4 (models, repositories, controllers)
+        ├── backoffice/                      # Projeto React-Admin (CRUD e gestão)
+        ├── db/                              # Scripts SQL (schema/seed) e inicialização MySQL
+        ├── docker-compose.prod.yml          # Definição completa do ambiente Docker (multi-container)
+        └── Car4Me_M3.postman_collection.json# Coleção Postman para testes
+└── presentation/                            # Ficheiros da apresentação
+```
 
-_Did you use any aditional libraries? Describe them here._
-* Docker
-* Multipass
-* NodeJS
-* JQuery
-* Laravel
-* Bootstrap
-* ReactJS
+### Ligações rápidas (no repositório)
 
-## Report
-_Please add at least on section (a file) per Chapter. But you can add more._
+- **Código da API (LoopBack 4)** → `src/Car4Me/api/`
+- **Backoffice (React-Admin)** → `src/Car4Me/backoffice/`
+- **Relatório em Markdown** → `doc/`
+- **OpenAPI / Swagger (API Explorer)** → `http://localhost:<PORTA>/explorer`
+- **OpenAPI JSON** → `http://localhost:<PORTA>/openapi.json`
+- **Postman** → `src/Car4Me/Car4Me_M3.postman_collection.json`
 
-### Project presentation
-* Chapter 1: [Project presentation](doc/c1.md)
-### Resources
-* Chapter 2: [Resources](doc/c2.md)
-### Product
-* Chapter 3: [Product](doc/c3.md)
-### Presentation
-* Chapter 4: [Presentation](doc/c4.md)
+> Nota: a porta depende da configuração do servidor e do `docker-compose` (ex.: 3000).
 
-## Team
-* Marco Amaro Oliveira [@MarcoOliveira](https://github.com/marcoamarooliveira)
-* Other team members
+---
+
+## 🛠 Tecnologias Utilizadas
+
+A solução foi construída com uma stack moderna e estável:
+
+- **Node.js**
+- **LoopBack 4 (TypeScript)**
+- **React + React-Admin**
+- **MySQL 8**
+- **Docker / Docker Compose**
+- **OpenAPI 3.0**
+- **Swagger / API Explorer (LoopBack)**
+- **Mermaid / Draw.io**
+- **VS Code**
+
+### Bibliotecas e Frameworks Adicionais
+
+- `@loopback/rest` (API REST + OpenAPI)
+- `@loopback/repository` (repos/relações + integração com DB)
+- `@loopback/boot` e `@loopback/core` (arranque e composição da app)
+- `mysql2` (driver MySQL)
+- `react-admin`
+- `react-admin-lb4` 
+
+---
+
+## Relatório do Projeto
+
+O relatório encontra-se organizado em capítulos:
+
+- **Capítulo 1:** `doc/c1.md`
+- **Capítulo 2:** `doc/c2.md`
+- **Capítulo 3:** `doc/c3.md`
+- **Capítulo 4:** `doc/c4.md`
+
+
+---
+
+## Equipa
+
+| Nome | GitHub |
+|------|--------|
+| **Carlos Miguel Castro** | https://github.com/a046404 |
+| **Marcelo Pinto** | https://github.com/MarceloCostaOBJ |
+| **Rui Amorim** | https://github.com/a047906 |
