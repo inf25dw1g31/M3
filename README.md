@@ -29,17 +29,31 @@ O sistema permite gerir:
 A estrutura do repositório mantém-se alinhada com o relatório por capítulos e com a separação API/backoffice:
 
 ```
-/
-└── doc/                                     # Capítulos do relatório (C1, C2, C3, C4)
-      └── image/                             # Imagens (diagramas, capturas do Swagger, etc.)
-└── src/
-    └── Car4Me/
-        ├── api/                             # Projeto LoopBack 4 (models, repositories, controllers)
-        ├── backoffice/                      # Projeto React-Admin (CRUD e gestão)
-        ├── db/                              # Scripts SQL (schema/seed) e inicialização MySQL
-        ├── docker-compose.prod.yml          # Definição completa do ambiente Docker (multi-container)
-        └── Car4Me_M3.postman_collection.json# Coleção Postman para testes
-└── presentation/                            # Ficheiros da apresentação
+M3/
+├── doc/                    # Relatório (7 ficheiros)
+│   ├── Capítulos 1-4
+│   ├── INDICE + RESUMO
+│   └── images/            # Diagramas
+│
+├── presentation/          # PowerPoint + Guião
+│
+└── src/Car4Me/
+    ├── api/              # LoopBack 4 (21 ficheiros TS)
+    │   ├── controllers/
+    │   ├── models/
+    │   ├── repositories/
+    │   └── datasources/
+    │
+    ├── backoffice/       # React Admin (10 componentes)
+    │   └── resources/   # Dashboard + CRUD
+    │
+    ├── db/              # MySQL (3 scripts SQL)
+    │   ├── schema
+    │   ├── triggers
+    │   └── data
+    │
+    ├── docker-compose.yml
+    └── Car4Me_M3.postman_collection.json
 ```
 
 ### Ligações rápidas (no repositório)
